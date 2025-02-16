@@ -1,7 +1,7 @@
-package `credit-history`.`01`
+package credit.history.`01`
 
-import hu.pinter.beci.`credit-history`.`01`.CreditHistory
-import hu.pinter.beci.`credit-history`.`01`.CreditRating
+import hu.pinter.beci.credit.history.first.CreditHistory
+import hu.pinter.beci.credit.history.first.CreditRating
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals

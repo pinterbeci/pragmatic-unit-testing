@@ -1,4 +1,4 @@
-package hu.pinter.beci.`credit-history`.`01`
+package hu.pinter.beci.credit.history.first
 
 import java.time.LocalDateTime
 

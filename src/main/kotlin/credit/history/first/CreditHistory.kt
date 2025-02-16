@@ -1,4 +1,4 @@
-package hu.pinter.beci.`credit-history`.`01`
+package hu.pinter.beci.credit.history.first
 
 class CreditHistory {
     //nézz utána --> itt List<CreditRating> nem működik
