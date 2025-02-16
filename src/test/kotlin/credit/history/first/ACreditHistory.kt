@@ -1,4 +1,4 @@
-package credit.history.`01`
+package credit.history.first
 
 import hu.pinter.beci.credit.history.first.CreditHistory
 import hu.pinter.beci.credit.history.first.CreditRating
