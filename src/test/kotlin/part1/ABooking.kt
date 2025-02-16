@@ -1,6 +1,6 @@
-package credit.history.first
+package part1
 
-import hu.pinter.beci.credit.history.first.Booking
+import hu.pinter.beci.part1.Booking
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertDoesNotThrow
 import org.junit.jupiter.api.assertThrows
