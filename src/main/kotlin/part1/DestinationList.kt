@@ -13,17 +13,28 @@ class DestinationList {
     }
 
     //List<> read-only, így az olvasás okés, de fenti add csak MutableList<> típussal oldaható meg
-    fun getLocations(): List<Location> = locations
+    fun getLocations(): MutableList<Location> = locations
 
-    fun moveLocationsWithHeading(x: Int, y: Int, heading: Location.Heading): MutableList<() -> Location> {
-        return getLocations()
-            .stream()
-            .map { location ->
-                {
-                    if (location.heading == heading)
-                        Location.of(x, y, heading)
-                    location
-                }
-            }.toList()
+    fun moveLocationsWithHeading(x: Int, y: Int, heading: Location.Heading) {
+        locations = getLocations().stream().map {
+            if (it.heading == heading)
+                Location.of(x, y, heading)
+            else it
+        }.toList()
     }
+
+    fun removeLocationsFurtherThan(x: Int, y: Int, distance: Int) {
+        locations = getLocations().stream().filter {
+            it.distanceFrom(x, y) < distance
+        }.toList()
+    }
+
+    //ez esetben ezen loginák a tesztelése is fontos lehet,
+    //ezen osztály hatásköre a destination list management, így ez miatt el kell mozgatni ezt a metóudst
+
+    /*private fun distanceBetween(point: Location, x: Int, y: Int): Double {
+        return sqrt(
+            (x - point.x).toDouble().pow(2.0) + (y - point.y).toDouble().pow(2.0)
+        )
+    }*/
 }

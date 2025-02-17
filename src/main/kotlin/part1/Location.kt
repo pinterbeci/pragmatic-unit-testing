@@ -1,5 +1,8 @@
 package hu.pinter.beci.part1
 
+import kotlin.math.pow
+import kotlin.math.sqrt
+
 class Location private constructor(
     val x: Int,
     val y: Int,
@@ -22,6 +25,12 @@ class Location private constructor(
             Heading.North -> return of(this.x, this.y + distance, this.heading)
             Heading.South -> return of(this.x, this.y - distance, this.heading)
         }
+    }
+
+    fun distanceFrom(x: Int, y: Int): Double {
+        return sqrt(
+            (x - this.x).toDouble().pow(2.0) + (y - this.y).toDouble().pow(2.0)
+        )
     }
 
     override fun equals(other: Any?): Boolean {
