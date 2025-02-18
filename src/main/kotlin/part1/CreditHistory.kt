@@ -8,7 +8,7 @@ class CreditHistory {
     }
 
     fun arithmeticMean(): Int {
-        if (ratings.isEmpty()) return 0
+        if (ratings.isEmpty()) throw IllegalStateException()
 
         val total = ratings.stream().mapToInt(CreditRating::rating).sum()
         return total / ratings.size

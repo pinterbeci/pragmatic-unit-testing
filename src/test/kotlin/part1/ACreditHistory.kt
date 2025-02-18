@@ -4,6 +4,7 @@ import hu.pinter.beci.part1.CreditHistory
 import hu.pinter.beci.part1.CreditRating
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import kotlin.test.assertEquals
 
 class ACreditHistory {
@@ -23,9 +24,7 @@ class ACreditHistory {
 
     @Test
     fun withNoCreditRatingsHas0Mean() {
-        val result = testCreditHistory.arithmeticMean()
-
-        assertEquals(0, result)
+        assertThrows<IllegalStateException>("Divide by zero!") { testCreditHistory.arithmeticMean() }
     }
 
     //-----------------------------------------------------------
